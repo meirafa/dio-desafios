@@ -79,7 +79,7 @@ atribuição:
 
 ### Sobre métodos:
 O que é?
-    Todo método deve ser criado dentro da classe, para ser executado precisa ser chamado a partir de uma classe ou um objeto, feito esta requisição ele realiza o comportamento que lhe foi determinado.
+    É identificado unicamente por assinatura, que é nome + parametros. Todo método deve ser criado dentro da classe, para ser executado precisa ser chamado a partir de uma classe ou um objeto, feito esta requisição ele realiza o comportamento que lhe foi determinado.
 
 Padrão de definição do método:
     
@@ -106,3 +106,61 @@ Padrão de definição do método:
     outros tipos de chamar o método:
         Math.random(); //metodo a partir de classe
         usuario.getEmail(); //metodo a partir de objeto
+
+Sobrecarga de método:
+    Se preserva o nome mas altera seu comportamento(os parametros), se atentar para que não haja ambiguidade de parametros para não se confundir, caso haja necessidade alterar o tipo de parametro e especifica-lo na chamada, por exemplo:
+    //declarando
+        public static void area(double lado1, double lado2){..}
+        public static void area(float diagonal1, float diagonal2){..}
+    //chamando
+        area(2.5d, 2.5d);
+        area(3.5f, 3.5f);
+
+    o System.out.println() é um exemplo de método sobrecarregado.
+        println(boolean x) - escreve um booleano e então termina a linha
+        println(char[] x) - escreve um array de caracters e termina a linha
+### Operadores relacionais
+Tipos:
+- Igualdade:
+determina se um operando é igual ao outro
+simbologia: ==
+exemplo: 1 == 1
+- Diferença:
+determina se um operando é diferente do outro
+simbologia: !=
+exemplo: 2 != 2
+- Maior:
+determina se um operando é maior do que outro
+simbologia: maior: >, maior igual: >=
+exemplo: 3 > 2 
+- Menor:
+determina se um operando é menor do que outro
+simbologia: menor: <, menor igual: <=
+exemplo: 2 < 3
+### Operadores lógicos
+Tipos:
+- Conjunção:
+operação lógica que só é verdadeira quando os operandos ou expresões envolvidas são verdade
+simbologia: &&
+terminologia and(e)
+exemplo: V && V = true, resto será false
+- Disjunção:
+operação que só é falsa quando ambos os operandos ou expressões envolvidas são falsos
+simbologia: ||
+terminologia: or(ou)
+exemplo: F || F = false, resto será true
+- Disjunção Exclusiva:
+operação que só é verdade quando os operandos ou expressões são opostos
+simbologia: ^
+terminologia: xor
+exemplo: V ^ F = true, resto será false
+- Negação:
+operação que inverte o valor lógico de um operador ou expressão
+simbologia: !
+terminologia: inverção
+exemplo: !V = false, !F = true
+#### *Não confunda operadores bitwise com operadores lógicos*
+Operadores bitwise, mexe com bits de numeros inteiros:
+& e |
+Operadores shift, inverte os bits do numero ou mexe com zeros a esquerda ou a direita:
+~, >>, >>>, <<
